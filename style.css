@@ -1,12 +1,52 @@
+body {
+  background-color: #674baf;
+  margin: 1rem 1rem;
+}
+
+.logo {
+  max-width: 40%;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.image {
+  display: none;
+}
+
+/* mobile */
 @media screen and (max-width: 375px) {
   body {
     background-image: url("images/bg-mobile.svg");
   }
+  .main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .image {
+    max-width: 50%;
+  }
 }
 
+/* desktop */
 @media screen and (min-width: 376px) {
   body {
     background-image: url("images/bg-desktop.svg");
+  }
+  .main {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 /*# sourceMappingURL=style.css.map */
