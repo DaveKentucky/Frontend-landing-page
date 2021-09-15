@@ -80,6 +80,14 @@ h2 p {
   grid-area: text-area;
 }
 
+.socials > button {
+  background: none;
+  color: white;
+  border-style: solid;
+  border-color: white;
+  border-radius: 50%;
+}
+
 /* mobile */
 @media screen and (max-width: 375px) {
   body {
@@ -162,6 +170,24 @@ h2 p {
   #register:hover {
     background-color: #e882e8;
     color: white;
+  }
+  .socials {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin-right: 2rem;
+  }
+  .socials > button {
+    width: 50px;
+    height: 50px;
+    margin: 0.5rem;
+  }
+  .fab {
+    -webkit-transform: scale(2);
+            transform: scale(2);
   }
 }
 /*# sourceMappingURL=style.css.map */
