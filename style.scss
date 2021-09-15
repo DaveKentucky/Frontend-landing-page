@@ -1,9 +1,21 @@
 $bg_mobile: url("images/bg-mobile.svg");
 $bg_desktop: url("images/bg-desktop.svg");
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: hsl(257, 40%, 49%);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 0 1rem;
+}
+
+footer {
     margin: 1rem 1rem;
+    text-align: center;
 }
 
 .logo {
@@ -11,29 +23,42 @@ body {
 }
 
 .header {
-    margin-bottom: 2rem;
+    margin: 1rem 1rem 2rem 1rem;
 }
 
 .main {
-    display: flex;
+    display: grid;
+    flex: 1;
+    margin: 1rem;
 }
 
 .image {
-    display: none;
+    grid-area: image-area;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 80%;
+    }
+}
+
+.text {
+    grid-area: text-area;
 }
 
 /* mobile */
 @media screen and (max-width: 375px) {
     body {
         background-image: $bg_mobile;
+        background-repeat: no-repeat;
     }
 
     .main {
-        flex-direction: column;
-    }
-
-    .image {
-        max-width: 50%;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+        "image-area"
+        "text-area";
     }
 }
 
@@ -41,9 +66,13 @@ body {
 @media screen and (min-width: 376px){
     body {
         background-image: $bg_desktop;
+        background-size: cover;
     }
 
     .main {
-        flex-direction: row;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1;
+        grid-template-areas: 
+        "image-area text-area";
     }
 }
