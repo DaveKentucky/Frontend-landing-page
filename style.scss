@@ -8,28 +8,26 @@ $bg_desktop: url("images/bg-desktop.svg");
 body {
     background-color: hsl(257, 40%, 49%);
     display: flex;
+    height: 100vh;
     flex-direction: column;
-    min-height: 100%;
+    justify-content: space-between;
     margin: 0 1rem;
-}
-
-footer {
-    margin: 1rem 1rem;
-    text-align: center;
 }
 
 .logo {
     max-width: 40%;
 }
 
-.header {
-    margin: 1rem 1rem 2rem 1rem;
-}
+
 
 .main {
     display: grid;
-    flex: 1;
     margin: 1rem;
+}
+
+footer {
+    margin: 1rem 1rem;
+    text-align: center;
 }
 
 .image {
@@ -38,7 +36,8 @@ footer {
     justify-content: center;
     align-items: center;
     img {
-        width: 80%;
+        max-width: 100%;
+        max-height: 100%;
     }
 }
 
@@ -52,13 +51,20 @@ footer {
         background-image: $bg_mobile;
         background-repeat: no-repeat;
     }
+    
+    .header {
+        margin: 1rem;
+    }
 
     .main {
         grid-template-columns: 100%;
-        grid-template-rows: 50% 50%;
+        grid-template-rows: 1 1;
         grid-template-areas:
         "image-area"
         "text-area";
+        div {
+            padding: 1rem 0.2rem;
+        }
     }
 }
 
@@ -66,7 +72,13 @@ footer {
 @media screen and (min-width: 376px){
     body {
         background-image: $bg_desktop;
+        background-repeat: no-repeat;
+        background-position: center;
         background-size: cover;
+    }
+
+    .header {
+        margin: 2rem;
     }
 
     .main {
@@ -74,5 +86,8 @@ footer {
         grid-template-rows: 1;
         grid-template-areas: 
         "image-area text-area";
+        div {
+            padding: 0.5rem 1rem;
+        }
     }
 }
