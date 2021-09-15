@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://davekentucky.github.io/Frontend-landing-page/)
+- Solution URL: [Hubble landing page](https://davekentucky.github.io/Frontend-landing-page/)
 
 ## My process
 
