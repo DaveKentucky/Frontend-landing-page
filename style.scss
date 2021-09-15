@@ -73,6 +73,8 @@ h2 {
 
 .socials {
     grid-area: socials-area;
+    display: flex;
+    flex-direction: row;
     & > button {
         display: block;
         background: none;
@@ -116,6 +118,7 @@ h2 {
     }
 
     .socials {
+        justify-content: center;
         margin-top: 3rem;
         & > button {
             width: 40px;
@@ -182,7 +185,6 @@ h2 {
     }
 
     .socials {
-        display: flex;
         justify-content: flex-end;
         margin-right: 2rem;
         & > button {

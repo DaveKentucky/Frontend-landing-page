@@ -82,6 +82,13 @@ h2 p {
 
 .socials {
   grid-area: socials-area;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .socials > button {
@@ -121,6 +128,9 @@ h2 p {
     font-size: 1.2rem;
   }
   .socials {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-top: 3rem;
   }
   .socials > button {
@@ -189,9 +199,6 @@ h2 p {
     color: white;
   }
   .socials {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
