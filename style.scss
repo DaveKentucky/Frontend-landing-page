@@ -2,6 +2,12 @@
 
 $bg_mobile: url("images/bg-mobile.svg");
 $bg_desktop: url("images/bg-desktop.svg");
+@mixin social_hover ($color) {
+    border-color: $color;
+    & > .fab {
+        color: $color;
+    }
+}
 
 * {
     box-sizing: border-box;
@@ -65,12 +71,16 @@ h2 {
     grid-area: text-area;
 }
 
-.socials > button {
-    background: none;
-    color: white;
-    border-style: solid;
-    border-color: white;
-    border-radius: 50%;
+.socials {
+    grid-area: socials-area;
+    & > button {
+        display: block;
+        background: none;
+        color: white;
+        border-style: solid;
+        border-color: white;
+        border-radius: 50%;
+    }
 }
 
 /* mobile */
@@ -86,10 +96,11 @@ h2 {
 
     .main {
         grid-template-columns: 100%;
-        grid-template-rows: 1 1;
+        grid-template-rows: 1 1 10%;
         grid-template-areas:
         "image-area"
-        "text-area";
+        "text-area"
+        "socials-area";
         div {
             padding: 1rem 0.2rem;
         }
@@ -102,6 +113,19 @@ h2 {
         border-radius: 30px;
         margin-top: 1rem;
         font-size: 1.2rem;
+    }
+
+    .socials {
+        margin-top: 3rem;
+        & > button {
+            width: 40px;
+            height: 40px;
+            margin: 0.5rem;
+        }
+    } 
+
+    .fab {
+        transform: scale(1.5);
     }
 }
 
@@ -120,9 +144,10 @@ h2 {
 
     .main {
         grid-template-columns: 60% 40%;
-        grid-template-rows: 1;
+        grid-template-rows: 90% 10%;
         grid-template-areas: 
-        "image-area text-area";
+        "image-area text-area"
+        "socials-area socials-area";
         padding-right: 2rem;
         div {
             padding: 0.5rem 1rem;
@@ -133,7 +158,7 @@ h2 {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        max-width: 90%;
+        max-width: 95%;
         min-height: 70%;
         text-align: left;
         h2 {
@@ -164,6 +189,9 @@ h2 {
             width: 50px;
             height: 50px;
             margin: 0.5rem;
+            &:hover {
+                @include social_hover(hsl(300, 69%, 71%));
+            }
         }
     } 
 

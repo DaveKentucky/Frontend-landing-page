@@ -80,7 +80,12 @@ h2 p {
   grid-area: text-area;
 }
 
+.socials {
+  grid-area: socials-area;
+}
+
 .socials > button {
+  display: block;
   background: none;
   color: white;
   border-style: solid;
@@ -100,9 +105,9 @@ h2 p {
   .main {
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
-    -ms-grid-rows: 1 1;
-        grid-template-rows: 1 1;
-        grid-template-areas: "image-area" "text-area";
+    -ms-grid-rows: 1 1 10%;
+        grid-template-rows: 1 1 10%;
+        grid-template-areas: "image-area" "text-area" "socials-area";
   }
   .main div {
     padding: 1rem 0.2rem;
@@ -114,6 +119,18 @@ h2 p {
     border-radius: 30px;
     margin-top: 1rem;
     font-size: 1.2rem;
+  }
+  .socials {
+    margin-top: 3rem;
+  }
+  .socials > button {
+    width: 40px;
+    height: 40px;
+    margin: 0.5rem;
+  }
+  .fab {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
   }
 }
 
@@ -131,9 +148,9 @@ h2 p {
   .main {
     -ms-grid-columns: 60% 40%;
         grid-template-columns: 60% 40%;
-    -ms-grid-rows: 1;
-        grid-template-rows: 1;
-        grid-template-areas: "image-area text-area";
+    -ms-grid-rows: 90% 10%;
+        grid-template-rows: 90% 10%;
+        grid-template-areas: "image-area text-area" "socials-area socials-area";
     padding-right: 2rem;
   }
   .main div {
@@ -150,7 +167,7 @@ h2 p {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    max-width: 90%;
+    max-width: 95%;
     min-height: 70%;
     text-align: left;
   }
@@ -184,6 +201,12 @@ h2 p {
     width: 50px;
     height: 50px;
     margin: 0.5rem;
+  }
+  .socials > button:hover {
+    border-color: #e882e8;
+  }
+  .socials > button:hover > .fab {
+    color: #e882e8;
   }
   .fab {
     -webkit-transform: scale(2);
